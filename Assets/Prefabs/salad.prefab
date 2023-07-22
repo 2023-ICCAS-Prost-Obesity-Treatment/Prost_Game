@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 387695024298531818}
   m_Layer: 0
   m_Name: salad
-  m_TagString: Salad
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02431aae1631a4a64bc6a5d0c2e80d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  OB_base_location: {x: 0, y: 0, z: 0}
