@@ -11,6 +11,7 @@ public class CameraManager : MonoBehaviour
     public void CameraOn() //카메라 켜기
     {
         cameraPanel.SetActive(true);
+        Debug.Log("Camear Function Start");
         //카메라 권한 확인
         if(!Permission.HasUserAuthorizedPermission(Permission.Camera))
         {

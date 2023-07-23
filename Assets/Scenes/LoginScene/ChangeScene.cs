@@ -14,12 +14,8 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
-    public void SceneChange()
+    public void StoreSceneChange()
     {
-        SceneManager.LoadScene("StepCount");
+        SceneManager.LoadScene("PointStore");
     }
-    // public void SceneChange()
-    // {
-    //     SceneManager.LoadScene("initialScene");
-    // }
 }

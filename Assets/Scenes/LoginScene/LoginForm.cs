@@ -23,7 +23,8 @@ public class LoginForm : MonoBehaviour
         form.AddField("password", password);
 
         // 서버에 HTTP POST 요청 보내기
-        StartCoroutine(PostLoginRequest(form));
+        // StartCoroutine(PostLoginRequest(form));
+        SceneManager.LoadScene("InitialScene");
     }
 
     IEnumerator PostLoginRequest(WWWForm form)
