@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0.2
+  bundleVersion: FattuRun
   preloadedAssets:
   - {fileID: -8587915504730680063, guid: 7e1cf732c6db34cc3ae29472aedda4b4, type: 2}
   - {fileID: 11400000, guid: 3d41b977a0b794f11b953eb540e21998, type: 2}
