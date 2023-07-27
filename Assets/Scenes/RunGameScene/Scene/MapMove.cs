@@ -12,7 +12,7 @@ public class MapMove : MonoBehaviour
         {
             transform.Translate(-mapSpeed * Time.deltaTime, 0, 0);
         }
-
+        
     }
 
     public GameObject[] itemSet;

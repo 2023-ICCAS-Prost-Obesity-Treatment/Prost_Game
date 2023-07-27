@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class magnetItem : MonoBehaviour
+public class MagnetItem : MonoBehaviour
 {
     public GameObject player;
     public Vector3 OB_base_location;
@@ -19,7 +19,7 @@ public class magnetItem : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("PlayerPosition");
         float distance = Vector2.Distance(gameObject.transform.position, player.transform.position);
-        if (DataManager.Instance.PlayerDie == false && DataManager.Instance.magnetTimeCurrent > 0)
+        if(DataManager.Instance.PlayerDie == false && DataManager.Instance.magnetTimeCurrent > 0)
         {
             if (distance < 6)
             {

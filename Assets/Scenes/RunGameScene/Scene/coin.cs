@@ -30,8 +30,7 @@ public class coin : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.CompareTo("Player") == 0)
-        { //플레이어가 코인과 충돌하면
+        if (collision.gameObject.tag.CompareTo("Player") == 0) { //플레이어가 코인과 충돌하면
             SoundManager.Instance.PlaySound("Coin");
             DataManager.Instance.score += 1; //점수를 1점 높이고
             gameObject.SetActive(false); // 자신을 화면에서 꺼
