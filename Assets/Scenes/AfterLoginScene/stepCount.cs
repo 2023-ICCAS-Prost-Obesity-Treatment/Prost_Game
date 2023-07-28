@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StepCount : MonoBehaviour
 {
     [SerializeField] public Text stepText;
-    protected int step;
+    public int step;
 
     private void Awake()
     {
@@ -23,6 +23,8 @@ public class StepCount : MonoBehaviour
 
     void Update()
     {
-        stepText.text = AndroidStepCounter.current.stepCounter.ReadValue().ToString("N0");
+        long step=AndroidStepCounter.current.stepCounter.ReadValue();
+        UserManager.Instance.stepPoint=step;
+        stepText.text=step.ToString("N0");
     }
 }
