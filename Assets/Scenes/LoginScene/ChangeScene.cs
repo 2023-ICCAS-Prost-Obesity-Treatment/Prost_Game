@@ -12,7 +12,7 @@ public class ChangeScene : MonoBehaviour
     }
     public void GameSceneChange()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("RunGameScene");
     }
     public void StoreSceneChange()
     {
