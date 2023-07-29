@@ -8,8 +8,19 @@ public class PlayerMove : MonoBehaviour
     public float jump2 = 12f; // �ι�° ���� ��
     public int jumpCount = 0;
     public Animator _ani;
+    public delegate void OnPlayerDie(Vector3 deathPosition);
+    public OnPlayerDie onPlayerDie;
 
+    private void Die()
+    {
+        DataManager.Instance.PlayerDie = true;
 
+        // 죽은 위치를 델리게이트를 통해 전달
+        if (onPlayerDie != null)
+        {
+            onPlayerDie(transform.position);
+        }
+    }
     public void PlayerAni_Run()
     {
         _ani.SetInteger("state", 0);
@@ -49,7 +60,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -75,6 +86,7 @@ public class PlayerMove : MonoBehaviour
             PlayerAni_Run();
         }
     }
+
 }
 
 
