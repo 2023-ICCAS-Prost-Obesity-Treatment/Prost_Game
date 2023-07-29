@@ -29,8 +29,8 @@ public class DataManager : MonoBehaviour
             DestroyObject(gameObject);
         }
     }
-    public int score = 0; //½ÇÁ¦ ½ºÄÚ¾î ÀúÀåÇÒ °÷
-    public bool PlayerDie = false; //»ç¸ÁÆÇ´Ü
+    public int score = 0; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+    public bool PlayerDie = false; //ï¿½ï¿½ï¿½ï¿½Ç´ï¿½
     public int stage = 0;
     public int stageView = 0;
 }

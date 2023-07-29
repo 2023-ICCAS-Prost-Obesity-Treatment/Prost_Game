@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float jump = 10f; //Ã¹¹øÂ° Á¡ÇÁ °ª 
-    public float jump2 = 12f; // µÎ¹øÂ° Á¡ÇÁ °ª
+    public float jump = 10f; //Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 
+    public float jump2 = 12f; // ï¿½Î¹ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     public int jumpCount = 0;
     public Animator _ani;
-
-
 
 
     public void PlayerAni_Run()
@@ -23,28 +21,28 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    public void Jump_Btn() //¹öÆ°¿¡ ³ÖÀ» ÇÔ¼ö
+    public void Jump_Btn() //ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
     {
         if (!DataManager.Instance.PlayerDie)
         {
-            Debug.Log("Á¡ÇÁ ¹öÆ° ½ÇÇà + " + jumpCount + " : " + gameObject.GetComponent<Rigidbody2D>().velocity);
+            // Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ + " + jumpCount + " : " + gameObject.GetComponent<Rigidbody2D>().velocity);
             SoundManager.Instance.PlaySound("Jump");
             if (jumpCount == 0 )
-            { //Á¡ÇÁ¸¦ ÇÑ¹øµµ ¾ÈÇÔ
+            { //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 if(gameObject.transform.position.y < 1)
                 {
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump, 0);
-                jumpCount = 1; //Á¡ÇÁÈ½¼ö Ãß°¡
+                jumpCount = 1; //ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½ ï¿½ß°ï¿½
                 Debug.Log("111");
                 PlayerAni_Jump();
 
                 }
             }
 
-            else if (jumpCount == 1 ) //Á¡ÇÁ ÇÑ¹ø ÇÔ
+            else if (jumpCount == 1 ) //ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ ï¿½ï¿½
             {
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0); //yÃà°ªÀÌ°ÚÁö?
-                jumpCount = 2; // Á¡ÇÁÈ½¼ö Ãß°¡
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0); //yï¿½à°ªï¿½Ì°ï¿½ï¿½ï¿½?
+                jumpCount = 2; // ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½ ï¿½ß°ï¿½
                 Debug.Log("222");
             }
             
@@ -57,16 +55,16 @@ public class PlayerMove : MonoBehaviour
     {
         //Debug.Log("OnCollisionEnter2D / " + collision.gameObject.name + " : " + collision.gameObject.tag);
 
-        if (collision.gameObject.CompareTag("Land")) // ¹Ù´Ú°ú Ãæµ¹½Ã µ¿ÀÛ 
+        if (collision.gameObject.CompareTag("Land")) // ï¿½Ù´Ú°ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
         {
             jumpCount = 0;
-            Debug.Log("¹Ù´Ú   " + jumpCount);
+            // Debug.Log("ï¿½Ù´ï¿½   " + jumpCount);
             PlayerAni_Run();
         }
         else
         {
             jumpCount = 0;
-            Debug.Log("¹Ù´Ú ¾Æ´Ô  " + jumpCount);
+            // Debug.Log("ï¿½Ù´ï¿½ ï¿½Æ´ï¿½  " + jumpCount);
         }
 
         Collider2D collider = collision.collider;

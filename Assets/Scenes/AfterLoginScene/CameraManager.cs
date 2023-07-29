@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Android;
+using UnityEngine.Networking;
+using System.IO;
+using System.Collections;
+using System;
+using Defective.JSON;
 
 public class CameraManager : MonoBehaviour
 {
@@ -8,6 +13,8 @@ public class CameraManager : MonoBehaviour
 
     public RawImage cameraViewImage; //카메라가 보여질 화면
     public GameObject cameraPanel;
+
+
     public void CameraOn() //카메라 켜기
     {
         cameraPanel.SetActive(true);
@@ -49,9 +56,20 @@ public class CameraManager : MonoBehaviour
 
             camTexture.Play(); // 카메라 시작하기
         }
-
     }
+    public void CaptureAndPredict()
+    {
+        // 카메라 캡처
+        Texture2D texture = new Texture2D(camTexture.width, camTexture.height);
+        texture.SetPixels(camTexture.GetPixels());
+        texture.Apply();
 
+        // 이미지를 바이트 배열로 변환
+        byte[] bytes = texture.EncodeToPNG();
+
+        Debug.Log("@@@@바이트 배열로 변환 : @@@@@\n");
+        
+    }
     public void CameraOff() //카메라 끄기
     {
         if(camTexture != null)

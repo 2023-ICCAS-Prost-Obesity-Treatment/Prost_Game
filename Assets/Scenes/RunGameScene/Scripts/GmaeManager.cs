@@ -17,15 +17,11 @@ public class GmaeManager : MonoBehaviour
     public GameObject BG_2;
     public GameObject BG_3;
     public GameObject CoverImage;
+    public Text EndScore;
+
     bool BG_flag = false;
     public Animator _ani;
 
-    private void Start()
-    {
-        // Animator º¯¼ö¸¦ PlayerMove ½ºÅ©¸³Æ®¿¡¼­ Ã£¾Æ¼­ ÇÒ´çÇÕ´Ï´Ù.
-        PlayerMove playerMoveScript = GetComponent<PlayerMove>();
-        _ani = playerMoveScript.GetComponent<Animator>();
-    }
 
     public void OnclickStartButton()
     {
@@ -70,7 +66,7 @@ public class GmaeManager : MonoBehaviour
         {
             if(temp == DataManager.Instance.stage)
             {
-                StageMap[temp - 1].transform.position = new Vector3(15f, StageMap[temp - 1].transform.position.y, StageMap[temp - 1].transform.position.z); //¿À¸¥ÂÊ¿¡¼­ ¿ÞÂÊ ÀÌµ¿ÇÑ ¸Ê ÀÚ¸®Àâ¾ÆÁÜ
+                StageMap[temp - 1].transform.position = new Vector3(15f, StageMap[temp - 1].transform.position.y, StageMap[temp - 1].transform.position.z); //ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 StageMap[temp - 1].SetActive(true);
             }
             else
@@ -108,18 +104,19 @@ public class GmaeManager : MonoBehaviour
 
         int temp3 = DataManager.Instance.score % 10;
         NumberImage[2].GetComponent<Image>().sprite = Number[temp3];
-
+        
         if (!DataManager.Instance.PlayerDie)
         {
-            DataManager.Instance.playTimeCurrent -= 1 * Time.deltaTime; // 1ÃÊ¿¡ 1¾¿ »©
+            DataManager.Instance.playTimeCurrent -= 1 * Time.deltaTime; // 1ï¿½Ê¿ï¿½ 1ï¿½ï¿½ ï¿½ï¿½
 
             TimeBar.fillAmount = DataManager.Instance.playTimeCurrent / DataManager.Instance.playTimeMax;
 
-            if (DataManager.Instance.playTimeCurrent < 0) //½Ã°£ ´Ù µÇ¸é Á×À½
+            if (DataManager.Instance.playTimeCurrent < 0) //ï¿½Ã°ï¿½ ï¿½ï¿½ ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½
             {
                 SoundManager.Instance.StopSound("BG");
                 SoundManager.Instance.StopSound("Jump");
                 DataManager.Instance.PlayerDie = true;
+                
 
             }
             if (DataManager.Instance.magnetTimeCurrent > 0)
@@ -131,6 +128,7 @@ public class GmaeManager : MonoBehaviour
         {
             EndPanel.SetActive(true);
             _ani.SetBool("Die", true);
+            EndScore.text=DataManager.Instance.score.ToString();
         }
     }
     public void Restart_Btu()
