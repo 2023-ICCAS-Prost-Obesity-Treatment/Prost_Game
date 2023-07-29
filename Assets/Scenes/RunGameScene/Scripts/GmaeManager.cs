@@ -128,20 +128,21 @@ public class GmaeManager : MonoBehaviour
         {
             EndPanel.SetActive(true);
             _ani.SetBool("Die", true);
-            EndScore.text=DataManager.Instance.score.ToString();
+            EndScore.text="SCORE : "+DataManager.Instance.score.ToString();
+            UserManager.Instance.userScore=DataManager.Instance.score;
         }
     }
-    public void Restart_Btu()
-    {
-        DataManager.Instance.stage = 0;
-        DataManager.Instance.stageView = 0;
-        DataManager.Instance.score = 0;
-        DataManager.Instance.PlayerDie = false;
-        DataManager.Instance.playTimeCurrent = DataManager.Instance.playTimeMax;
-        DataManager.Instance.magnetTimeCurrent = 0;
+    // public void Restart_Btu()
+    // {
+    //     DataManager.Instance.stage = 0;
+    //     DataManager.Instance.stageView = 0;
+    //     DataManager.Instance.score = 0;
+    //     DataManager.Instance.PlayerDie = false;
+    //     DataManager.Instance.playTimeCurrent = DataManager.Instance.playTimeMax;
+    //     DataManager.Instance.magnetTimeCurrent = 0;
 
-        SceneManager.LoadScene("SampleScene");
-        SoundManager.Instance.PlaySound("BG");
-    }
+    //     SceneManager.LoadScene("SampleScene");
+    //     SoundManager.Instance.PlaySound("BG");
+    // }
 
 }

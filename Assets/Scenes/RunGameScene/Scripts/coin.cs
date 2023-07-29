@@ -30,10 +30,10 @@ public class coin : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.CompareTo("Player") == 0) { //ÇÃ·¹ÀÌ¾î°¡ ÄÚÀÎ°ú Ãæµ¹ÇÏ¸é
+        if (collision.gameObject.tag.CompareTo("Player") == 0) { //ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½Î°ï¿½ ï¿½æµ¹ï¿½Ï¸ï¿½
             SoundManager.Instance.PlaySound("Coin");
-            DataManager.Instance.score += 1; //Á¡¼ö¸¦ 1Á¡ ³ôÀÌ°í
-            gameObject.SetActive(false); // ÀÚ½ÅÀ» È­¸é¿¡¼­ ²¨
+            DataManager.Instance.score += 1; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½
+            gameObject.SetActive(false); // ï¿½Ú½ï¿½ï¿½ï¿½ È­ï¿½é¿¡ï¿½ï¿½ ï¿½ï¿½
         }
     }
 }

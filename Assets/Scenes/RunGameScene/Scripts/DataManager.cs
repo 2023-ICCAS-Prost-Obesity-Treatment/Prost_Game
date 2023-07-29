@@ -8,6 +8,10 @@ public class DataManager : MonoBehaviour
     public float magnetTimeCurrent = 0f;
     public float magnetTimeMax = 5f;
     public float itemMoveSpeed = 15f;
+    public int score = 0; //���� ���ھ� ������ ��
+    public bool PlayerDie = false; //����Ǵ�
+    public int stage = 0;
+    public int stageView = 0;
 
     static DataManager instance;
     public static DataManager Instance
@@ -29,9 +33,6 @@ public class DataManager : MonoBehaviour
             DestroyObject(gameObject);
         }
     }
-    public int score = 0; //���� ���ھ� ������ ��
-    public bool PlayerDie = false; //����Ǵ�
-    public int stage = 0;
-    public int stageView = 0;
+
 }
 
